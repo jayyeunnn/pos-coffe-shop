@@ -1,0 +1,45 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# env
+.env
+.env.local
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# internal project docs — tidak perlu ikut commit
+CLAUDE.md
+PRD.md
+PRODUCT.md
+TASKLIST.md
+MASTER.md
+DESIGN.md
+preview.html
+.claude/
+/scripts/
+/index.ts

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ---- APP DARK (default) ---- */
+  :root {
+    --background: 0 0% 4%;
+    --surface: 0 0% 8%;
+    --surface-raised: 0 0% 11%;
+    --border: 0 0% 16%;
+    --text-primary: 34 33% 94%;
+    --text-secondary: 34 4% 52%;
+    --accent: 26 47% 60%;
+    --accent-hover: 30 48% 67%;
+    --success: 142 69% 58%;
+    --warning: 43 96% 56%;
+    --error: 0 91% 71%;
+    --radius: 0.5rem;
+  }
+
+  /* ---- LIGHT TOGGLE (app light mode) ---- */
+  .light {
+    --background: 34 33% 96%;
+    --surface: 0 0% 100%;
+    --surface-raised: 34 20% 97%;
+    --border: 34 14% 88%;
+    --text-primary: 24 60% 15%;
+    --text-secondary: 30 12% 38%;
+    --accent: 25 76% 31%;
+    --accent-hover: 26 47% 45%;
+    --success: 142 60% 38%;
+    --warning: 38 92% 42%;
+    --error: 0 72% 48%;
+  }
+
+  /* ---- LANDING WARM ARTISANAL (scoped) ---- */
+  .landing-theme {
+    --background: 36 39% 95%;
+    --surface: 0 0% 100%;
+    --surface-raised: 40 33% 97%;
+    --border: 34 20% 85%;
+    --text-primary: 24 88% 14%;
+    --text-secondary: 25 25% 35%;
+    --accent: 25 76% 31%;
+    --accent-hover: 26 47% 40%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--text-primary));
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #receipt-print,
+  #receipt-print * {
+    visibility: visible !important;
+  }
+  #receipt-print {
+    position: fixed !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 320px !important;
+    padding: 20px 16px !important;
+    background: white !important;
+    color: black !important;
+    font-family: ui-monospace, "Courier New", monospace !important;
+    font-size: 11px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  #receipt-print * {
+    color: black !important;
+    background-color: transparent !important;
+  }
+  #receipt-print .border-dashed {
+    border-color: #888 !important;
+    border-top-style: dashed !important;
+  }
+}
